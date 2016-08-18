@@ -3,9 +3,9 @@
 const angular = require('angular');
 const gameApp = angular.module('gameApp');
 
-gameApp.controller('GameController', ['$log', '$scope', GameController]);
+gameApp.controller('GameController', ['$log', GameController]);
 
-function GameController($log, $scope) {
+function GameController($log) {
 
   this.map = require('../lib/map.js');
   this.directions = ['north', 'east', 'south', 'west'];
@@ -13,7 +13,7 @@ function GameController($log, $scope) {
   this.adventures = require('../lib/adventures.js');
   this.allAdventures = Object.keys(this.adventures);
   this.beginning = true;
-  this.adventure = false;
+  this.adventureTime = false;
   this.ending = false;
 
   this.start = function() {
@@ -25,7 +25,7 @@ function GameController($log, $scope) {
 
   this.move = function(direction) {
     if (!this.map[this.player.location]) return this.logMove(this.player.name + '\'s location not found! Refresh page.');
-    if ($scope.room === 'Hogwarts Castle') {
+    if (this.room === 'Hogwarts Castle') {
       this.ending = true;
     }
     if (this.map[this.player.location][direction] === 'wall') {
@@ -46,8 +46,10 @@ function GameController($log, $scope) {
   };
 
   this.currentDescriptions = function() {
-    $scope.room = this.player.location;
-    $scope.instruction = this.instructions[this.player.location];
+    this.room = this.player.location;
+    // $scope.room = this.player.location;
+    // $scope.instruction = this.instructions[this.player.location];
+    this.instruction = this.instructions[this.player.location];
   };
 
   this.adventureAppear = function() {
@@ -55,18 +57,18 @@ function GameController($log, $scope) {
     console.log(selection);
     console.log(this.adventures[selection]);
     if (!this.adventures[selection]) return;
-    $scope.notice = this.adventures[selection].notice;
-    this.adventure = true;
-    $scope.adventure = selection;
-    $scope.adventureChoice = this.adventures[selection];
-    console.log($scope.adventure);
+    this.notice = this.adventures[selection].notice;
+    this.adventureTime = true;
+    this.adventure = selection;
+    this.adventureChoice = this.adventures[selection];
+    console.log(this.adventure);
   };
 
   this.doAdventure = function() {
-    let num = Math.floor(Math.random() * $scope.adventureChoice.option.length);
-    let choice = $scope.adventureChoice.option[num];
-    this.adventure = false;
-    return this.logMove($scope.adventureChoice.response + choice);
+    let num = Math.floor(Math.random() * this.adventureChoice.option.length);
+    let choice = this.adventureChoice.option[num];
+    this.adventureTime = false;
+    return this.logMove(this.adventureChoice.response + choice);
   };
 
 }

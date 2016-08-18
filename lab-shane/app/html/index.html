@@ -10,17 +10,16 @@
 <body>
     <main ng-controller="GameController as gameCtrl">
         <h1>The Harry Potter Adventure Quest</h1>
-
-        <div class="descriptions" ng-hide="gameCtrl.adventure">
+        <div class="descriptions" ng-hide="gameCtrl.adventureTime">
             <p ng-show="gameCtrl.beginning">Welcome to the magical world of witchcraft and wizardry. Adventure and peril awaits the famed wizard, Harry Potter. </p>
             <button ng-show="gameCtrl.beginning" ng-click="gameCtrl.start()">Let's Go!</button>
-            <h2 ng-init="{room}">{{room}}</h2>
-            <i ng-init="{instruction}">{{instruction}}</i>
+            <h2>{{gameCtrl.room}}</h2>
+            <i>{{gameCtrl.instruction}}</i>
 
             <section ng-hide="gameCtrl.ending">
 
-                <div class="direction" ng-hide="gameCtrl.adventure">
-                    <form ng-hide="gameCtrl.beginning" ng-hide "gameCtrl.adventure" name="moveForm" novalidate ng-init="moveForm.direction='gameCtrl.directions[0]'">
+                <div class="direction" ng-hide="gameCtrl.adventureTime">
+                    <form ng-hide="gameCtrl.beginning" ng-hide "gameCtrl.adventureTime" name="moveForm" novalidate ng-init="moveForm.direction='gameCtrl.directions[0]'">
                         <label for="direction">Proceed which way?</label>
                         <select name="direction" ng-model="moveForm.direction">
                             <option ng-repeat="direction in gameCtrl.directions" value="{{direction}}">{{direction}}</option>
@@ -34,9 +33,9 @@
                 </ol>
         </div>
 
-        <div class="adventure" ng-show="gameCtrl.adventure">
-            <p ng-show="gameCtrl.adventure" ng-init="{notice}">{{notice}}</p>
-            <button ng-init="{adventure}" ng-click="gameCtrl.doAdventure()">{{adventure}}</button>
+        <div class="adventure" ng-show="gameCtrl.adventureTime">
+            <p ng-show="gameCtrl.adventureTime" ng-init="{notice}">{{gameCtrl.notice}}</p>
+            <button ng-init="{adventure}" ng-click="gameCtrl.doAdventure()">{{gameCtrl.adventure}}</button>
         </div>
 
         </section>
