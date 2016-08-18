@@ -1,0 +1,35 @@
+@import 'vendor/_normalize.scss';
+@include normalize();
+@import '_theme';
+
+body, html{
+  background-color: $two;
+  color: $three;
+  width: 90%;
+}
+
+h1{
+  color: $one;
+}
+
+h2{
+  color: $four;
+}
+
+form, button{
+  color: $four;
+}
+
+main{
+  margin: 2rem;
+}
+
+section{
+  position: absolute;
+  top: 225px;
+  margin-top: 2rem;
+}
+
+.adventure {
+  margin: 2rem;
+}

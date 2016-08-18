@@ -1,0 +1,10 @@
+module.exports = {
+  'Room of Requirement': 'And slowly, he looked into the faces of the other people in the mirror, and saw other pairs of green eyes like his, other noses like his, even a little old man who looked as though he had his knobbly knees; he was looking at his family, for the first time in his life.',
+  'Chamber of Secrets': 'He was standing at the end of a long, dimly lit chamber. Towering stone pillars entwined with serpents, rose to a ceiling lost in darkness, casting long, black shadows through the odd, greenish gloom that filled the place.',
+  'Great Lake':'And out of the end of his wand burst, not a shapeless cloud of mist, but a blinding, dazzling, silver animal. He screwed up his eyes, trying to see what it was. It looked like a horse. It was galloping silently away from him, across the black surface of the lake. He saw it lower its head and charge at the swarming dementors...',
+  'Triwizard Maze': 'Oh, find the cup, if you can, but be careful. You might just lose yourself along the way.',
+  'Department of Mysteries': 'The one with the power to vanquish the Dark Lord approaches... Born to those who have thrice defied him, born as the seventh month dies... and the Dark Lord will mark him as his equal, but he will have power the Dark Lord knows not... and either must die at the hand of the other for neither can live while the other survives...',
+  'Cave by the Sea': 'He turned his head to look at the greenish glow toward which the boat was still inexorably sailing. He could not pretend now that he was not scared. The great black lake, teeming with the dead...',
+  'Hogwarts Castle': 'I know that you are preparing to fight. Your efforts are futile. You cannot fight me. I do not want to kill you. I have great respect for the teachers of Hogwarts. I do not want to spill magical blood. Give me Harry Potter, and none shall be harmed. Give me Harry Potter, and I shall leave the school untouched. Give me Harry Potter, and you will be rewarded. You have until midnight.',
+  'Hogsmeade': 'Adventure complete! Time to get crunk on some butterbeer!'
+};
